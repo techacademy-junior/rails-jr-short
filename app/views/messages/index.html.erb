@@ -1,7 +1,22 @@
-<h1>Messages#index</h1>
+<div id="parent">
+  <div class="main">
+    <div class="container-fluid">
+      <%= render @messages %>
+    </div>
+  </div>
 
-<ul>
-  <% @messages.each do |message| %>
-    <li><%= message.content %></li>
-  <% end %>
-</ul>
+  <footer class="footer">
+    <div class="container-fluid">
+      <%= render 'form', message: @message %>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function footerStart(selector){
+    $('html').animate({scrollTop: $(selector).offset().top}, 0);
+  }
+
+  $("#parent").append("<div id='item'></div>");
+  footerStart("#item");
+</script>

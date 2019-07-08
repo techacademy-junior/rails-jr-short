@@ -1,0 +1,1 @@
+# rails-jr-short

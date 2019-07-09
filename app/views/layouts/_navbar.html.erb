@@ -1,0 +1,33 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- ハンバーガーボタン -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- /ハンバーガーボタン -->
+        <!-- ロゴ -->
+        <a class="navbar-brand" href="/"><h1>Quiz</h1></a>
+        <!-- /ロゴ -->
+        <!-- 開閉メニュー -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to 'クイズ登録', new_question_path %></li>
+              <li><%= link_to 'クイズ一覧', questions_path %></li>
+              <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to '管理者ログイン', login_path %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <!-- /開閉メニュー -->
+  </nav>
+</header>
+<!-- /header -->

@@ -1,3 +1,161 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ * ベースレイアウト
+ *
+ */
+
+body {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 480px;
+  margin: auto;
+  background-color: #508DCC;
+}
+
+#admin {
+  padding: 100px 15px 0 15px;
+}
+
+/*
+ * ヘッダーレイアウト
+ *
+ */
+
+.navbar {
+  max-width: 480px;
+  margin: auto;
+}
+.navbar a {
+  color: #fff;
+}
+.nav > li > a:focus,
+.nav > li > a:hover {
+  background-color: #56a3ef;
+}
+.navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-brand h1 {
+  margin-top: 0;
+  font-size: 24px;
+  line-height: .75;
+}
+
+/*
+ * メインレイアウト
+ *
+ */
+
+.main {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/*
+ * チャットレイアウト
+ *
+ */
+
+.comment {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.comment-menu {
+  font-size: 13px;
+}
+.comment-menu a:after {
+  content: "|";
+  margin-left: 4px;
+  color: #555;
+}
+.comment-menu a:last-child:after {
+  content: "";
+}
+.message {
+  position: relative;
+  display: inline-block;
+  max-width: 280px;
+  padding: 8px 16px;
+  text-align: left;
+  border-radius: 12px;
+}
+.message:after {
+  position: absolute;
+  content: "";
+  border: 8px solid transparent;
+  transform: rotate(-2deg);
+}
+.message p {
+  margin-bottom: 0;
+}
+.my-comment .message {
+  margin-right: 10px;
+  background-color: #42e15e;
+}
+.my-comment .message:after {
+  top: 25%;
+  right: -20px;
+  border-left: 20px solid #42e15e;
+}
+.robo-comment {
+  display: flex;
+}
+.robo-comment .message {
+  margin-left: 20px;
+  background-color: #edf1ee;
+}
+.robo-comment .message:after {
+  top: 2%;
+  left: -20px;
+  border-right: 20px solid #edf1ee;
+}
+.robo-comment .message p {
+  margin-bottom: 5px;
+}
+.icon-chat {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  background-image: url("/icon-robo.png");
+  background-size: 40px;
+  border-radius: 50%;
+}
+.icon-circle {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #a94442;
+  border-radius: 50%;
+}
+.answer {
+  display: block;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border .2s ease-in-out;
+  cursor: pointer;
+}
+.answer:hover {
+  text-decoration: none;
+}
+
+/*
+ * フッターレイアウト
+ *
+ */
+
+.footer {
+}
+
+.footer .col-xs-9 {
+  padding-right: 0;
+}

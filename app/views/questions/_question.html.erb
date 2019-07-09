@@ -9,9 +9,21 @@
       <%= link_to( question.a_3, messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post, class: 'list-group-item', remote: true) %>
       <%= link_to( question.a_4, messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post, class: 'list-group-item', remote: true) %>
     </div>
+    <% if logged_in?  %>
+      <div class="comment-menu panel-body text-right">
+        <%= link_to '変更', edit_question_path(question) %>
+        <%= link_to '消去', question, method: :delete, data: { confirm: 'ほんとうに削除しますか？' } %>
+      </div>
+    <% end %>
   <% else %>
     <div class="panel-body">
      <p>回答済みのクイズです</p>
+      <% if logged_in?  %>
+        <div class="comment-menu text-right">
+          <%= link_to '変更', edit_question_path(question) %>
+          <%= link_to '消去', question, method: :delete, data: { confirm: 'ほんとうに削除しますか？' } %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= question.title %>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item a_1_<%= message.id %>"><%= question.a_1 %></li>
+    <li class="list-group-item a_2_<%= message.id %>"><%= question.a_2 %></li>
+    <li class="list-group-item a_3_<%= message.id %>"><%= question.a_3 %></li>
+    <li class="list-group-item a_4_<%= message.id %>"><%= question.a_4 %></li>
+  </ul>
+  <div class="panel-footer">
+
+    <% if message.answer == question.answer %>
+      <p class="text-danger"><i class="icon-circle"></i> 正解</p>
+      <p>正解！！答えは<%= answer_select(question) %>です。</p>
+    <% else %>
+      <p class="text-info"><i class="glyphicon glyphicon-remove"></i> 残念</p>
+      <p>残念・・・答えは<%= answer_select(question) %>でした。</p>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  console.log('.a_<%= question.answer %>_<%= message.id %>');
+  $('.a_<%= question.answer %>_<%= message.id %>').addClass('list-group-item-danger');
+  if ('<%= message.answer.to_s %>' != '<%= question.answer.to_s %>') {
+    $('.a_<%= message.answer %>_<%= message.id %>').addClass('list-group-item-info');
+  }
+</script>

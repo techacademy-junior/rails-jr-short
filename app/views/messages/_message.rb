@@ -1,4 +1,4 @@
-<% if message.robo == true %>
+<% if message.robo == 1 %>
   <div class="robo-comment comment">
     <div class="icon-chat"></div>
     <div class="message" id="message-<%= message.id %>">
